@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New User</title>
+        <link rel="stylesheet" href="/form-style.css">
+    </head>
+    <body>
+        <div class="container">
+            <form action="/user" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div>
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" required>
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+              </div>
+
+            <button type="submit">Add User</button>
+
+        </form>
+
+        <% if(errors){%>
+            <div class="error">
+                <h3>Error(s):</h3>
+                <ul>
+                    <%errors.forEach(error => {%>
+                        <li> <%= error.msg %></li>
+                    <%})%>
+                </ul>
+            </div>
+        <%} %>
+        </div>
+    </body>
+</html>

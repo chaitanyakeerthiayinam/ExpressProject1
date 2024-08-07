@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Details</title>
+        <link rel="stylesheet" href="/detail-style.css">
+    </head>
+    <body>
+        <div class="container">
+            <a href="/user/new" class="add-user-btn">Add User</a>
+            <h1>User Details</h1>
+
+           <div class="card">
+        <div class="card-header">
+            <h2 class="card-title"><%= user.name %></h2>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><strong>Age:</strong> <%= user.age %></p>
+            <p class="card-text"><strong>Email:</strong> <%= user.email %></p>
+            <p class="card-text"><strong>Image:</strong></p>
+            <% if (user.imagePath) { %>
+                <img src="/<%= user.imagePath %>" alt="user Image" class="img-thumbnail" style="width: 300px; height: auto;">
+            <% } else { %>
+              <p>No image available.</p>
+            <% } %>
+          </div>
+    </div>
+        </div>
+    </body>
+</html>
